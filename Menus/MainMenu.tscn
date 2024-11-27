@@ -1,143 +1,235 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Menus/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Menus/GRUNGE.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Menus/Roboto-Black.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Game.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 3 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 0.490196 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0.686275 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0, 0, 0, 0.392157 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
-mainGameScene = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 480.0
-margin_bottom = 272.0
-color = Color( 0.513726, 0.662745, 0.690196, 1 )
+margin_bottom = 270.0
+color = Color( 0.329412, 0.513726, 0.611765, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 456.0
-margin_bottom = 236.0
-rect_scale = Vector2( 1.05282, 1.14847 )
-custom_constants/margin_right = 100
-custom_constants/margin_top = 50
-custom_constants/margin_left = 100
-custom_constants/margin_bottom = 50
+anchor_left = 0.319
+anchor_top = 0.374
+anchor_right = 0.681
+anchor_bottom = 0.626
+margin_left = -0.119995
+margin_top = 0.0199966
+margin_right = 0.119965
+margin_bottom = -0.0200195
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 100.0
-margin_top = 50.0
-margin_right = 356.0
-margin_bottom = 186.0
+[node name="Menu" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 173.0
+margin_bottom = 68.0
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
-text = "Proyecto Capstone"
-align = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 44.0
-margin_right = 256.0
-margin_bottom = 136.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 10
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 50
-custom_constants/margin_left = 50
-
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
-margin_left = 50.0
-margin_right = 206.0
-margin_bottom = 24.0
-focus_mode = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+[node name="Start" type="Button" parent="MarginContainer/Menu"]
+margin_right = 173.0
+margin_bottom = 20.0
 text = "Iniciar"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 256.0
-margin_bottom = 58.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 50
-custom_constants/margin_left = 50
-
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
-margin_left = 50.0
-margin_right = 206.0
-margin_bottom = 24.0
-focus_mode = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+[node name="Options" type="Button" parent="MarginContainer/Menu"]
+margin_top = 24.0
+margin_right = 173.0
+margin_bottom = 44.0
 text = "Opciones"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 256.0
-margin_bottom = 92.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 50
-custom_constants/margin_left = 50
-
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
-margin_left = 50.0
-margin_right = 206.0
-margin_bottom = 24.0
-focus_mode = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
+[node name="Exit" type="Button" parent="MarginContainer/Menu"]
+margin_top = 48.0
+margin_right = 173.0
+margin_bottom = 68.0
 text = "Salir"
 
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_Start_button_up"]
+[node name="Options" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.5
+margin_top = -22.0
+margin_right = 24.5
+margin_bottom = 22.0
+
+[node name="Video" type="Button" parent="Options/VBoxContainer"]
+margin_right = 49.0
+margin_bottom = 20.0
+text = "Video"
+
+[node name="Audio" type="Button" parent="Options/VBoxContainer"]
+margin_top = 24.0
+margin_right = 49.0
+margin_bottom = 44.0
+text = "Audio"
+
+[node name="BackFromOptions" type="Button" parent="Options"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -26.0
+margin_top = -20.0
+margin_right = 26.0
+text = "Volver"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -40.0
+margin_right = 75.0
+margin_bottom = 40.0
+
+[node name="Labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+margin_right = 122.0
+margin_bottom = 80.0
+
+[node name="Fullscreen" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 5.0
+margin_right = 122.0
+margin_bottom = 19.0
+size_flags_vertical = 6
+text = "Pantalla completa"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 47.0
+size_flags_vertical = 6
+text = "Ventana sin bordes"
+
+[node name="VSync" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 61.0
+margin_right = 122.0
+margin_bottom = 75.0
+size_flags_vertical = 6
+text = "VSync"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+margin_left = 126.0
+margin_right = 150.0
+margin_bottom = 80.0
+
+[node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_top = 28.0
+margin_right = 24.0
+margin_bottom = 52.0
+
+[node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_top = 56.0
+margin_right = 24.0
+margin_bottom = 80.0
+
+[node name="BackFromVideo" type="Button" parent="Video"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -26.0
+margin_top = -20.0
+margin_right = 26.0
+text = "Volver"
+
+[node name="Audio" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -113.0
+margin_top = -28.0
+margin_right = 113.0
+margin_bottom = 28.0
+
+[node name="Labels" type="VBoxContainer" parent="Audio/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 56.0
+
+[node name="Master" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 1.0
+margin_right = 50.0
+margin_bottom = 15.0
+size_flags_vertical = 6
+text = "General"
+
+[node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 21.0
+margin_right = 50.0
+margin_bottom = 35.0
+size_flags_vertical = 6
+text = "Musica"
+
+[node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 41.0
+margin_right = 50.0
+margin_bottom = 55.0
+size_flags_vertical = 6
+text = "Efectos"
+
+[node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
+margin_left = 54.0
+margin_right = 226.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_right = 172.0
+margin_bottom = 16.0
+
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_top = 20.0
+margin_right = 172.0
+margin_bottom = 36.0
+
+[node name="Sound FX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_top = 40.0
+margin_right = 172.0
+margin_bottom = 56.0
+
+[node name="BackFromAudio" type="Button" parent="Audio"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -26.0
+margin_top = -20.0
+margin_right = 26.0
+text = "Volver"
+
+[connection signal="pressed" from="MarginContainer/Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_Video_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_Audio_pressed"]
+[connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_BackFromOptions_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/Borderless" to="." method="_on_Borderless_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_VSync_toggled"]
+[connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_BackFromVideo_pressed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_Master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_Music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Sound FX" to="." method="_on_Sound_FX_value_changed"]
+[connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_BackFromAudio_pressed"]
