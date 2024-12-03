@@ -50,6 +50,7 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 			animation_player.play("hurt")
 		states.dead:
 			animation_player.play("dead")
+			SceneTransistor.start_transition_to("res://Menus/WinScreen.tscn")
 			
 			
 func _exit_state(state_exited: int) -> void:
