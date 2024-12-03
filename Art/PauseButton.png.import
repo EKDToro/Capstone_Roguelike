@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dust.png-68f990dfe0d08e4f62051186b4e5fa8e.stex"
+path="res://.import/PauseButton.png-0f3f20f725283e34ae523d55348946e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Dust.png"
-dest_files=[ "res://.import/Dust.png-68f990dfe0d08e4f62051186b4e5fa8e.stex" ]
+source_file="res://Art/PauseButton.png"
+dest_files=[ "res://.import/PauseButton.png-0f3f20f725283e34ae523d55348946e7.stex" ]
 
 [params]
 

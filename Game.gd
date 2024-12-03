@@ -13,3 +13,18 @@ func _init() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_focus_next"):
 		get_tree().paused = true
+
+var ScenePause: String = "res://Menus/PauseMenu.tscn"
+var paused: Object = null
+	
+func _on_PauseButton_pressed():
+	if paused == null:
+		paused = load(ScenePause).instance()
+		$UI.add_child(paused)
+		paused.connect("unpause", self, "on_paused_exit")
+		get_tree().paused = true
+	pass
+	
+func on_paused_exit() -> void:
+	paused = null
+	pass
