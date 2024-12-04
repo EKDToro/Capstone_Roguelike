@@ -58,6 +58,7 @@ config/icon="res://icon.png"
 
 SceneTransistor="*res://Autoloads/SceneTransistor.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
+GameMusic="*res://Audio/GameMusic.tscn"
 
 [display]
 
