@@ -21,7 +21,7 @@ anchor_bottom = 0.626
 margin_left = -0.119995
 margin_top = 0.0199966
 margin_right = 0.119965
-margin_bottom = -0.0200195
+margin_bottom = -0.019989
 
 [node name="Menu" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 173.0
@@ -100,16 +100,16 @@ margin_right = 122.0
 margin_bottom = 80.0
 
 [node name="Fullscreen" type="Label" parent="Video/HBoxContainer/Labels"]
-margin_top = 5.0
+margin_top = 12.0
 margin_right = 122.0
-margin_bottom = 19.0
+margin_bottom = 26.0
 size_flags_vertical = 6
 text = "Pantalla completa"
 
 [node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
-margin_top = 33.0
+margin_top = 54.0
 margin_right = 122.0
-margin_bottom = 47.0
+margin_bottom = 68.0
 size_flags_vertical = 6
 text = "Ventana sin bordes"
 
@@ -169,45 +169,23 @@ margin_right = 50.0
 margin_bottom = 56.0
 
 [node name="Master" type="Label" parent="Audio/HBoxContainer/Labels"]
-margin_top = 1.0
-margin_right = 50.0
-margin_bottom = 15.0
-size_flags_vertical = 6
-text = "General"
-
-[node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
 margin_top = 21.0
 margin_right = 50.0
 margin_bottom = 35.0
 size_flags_vertical = 6
-text = "Musica"
-
-[node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Labels"]
-margin_top = 41.0
-margin_right = 50.0
-margin_bottom = 55.0
-size_flags_vertical = 6
-text = "Efectos"
+text = "General"
 
 [node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
 margin_left = 54.0
 margin_right = 226.0
 margin_bottom = 56.0
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
-margin_right = 172.0
-margin_bottom = 16.0
-
-[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
 margin_top = 20.0
 margin_right = 172.0
 margin_bottom = 36.0
-
-[node name="Sound FX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
-margin_top = 40.0
-margin_right = 172.0
-margin_bottom = 56.0
 
 [node name="BackFromAudio" type="Button" parent="Audio"]
 anchor_left = 0.5
@@ -230,6 +208,4 @@ text = "Volver"
 [connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_VSync_toggled"]
 [connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_BackFromVideo_pressed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_Master_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_Music_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Sound FX" to="." method="_on_Sound_FX_value_changed"]
 [connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_BackFromAudio_pressed"]

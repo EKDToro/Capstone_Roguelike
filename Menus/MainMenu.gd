@@ -14,10 +14,12 @@ func toggle():
 	get_tree().paused = visible
 
 func _on_Start_pressed():
+	print("Start button was pressed")
 	toggle()
 	get_tree().change_scene("Game.tscn")
 	
 func _on_Options_pressed():
+	print("Option button was pressed")
 	show_and_hide(options, menu)
 	
 func show_and_hide(first, second):
@@ -25,6 +27,7 @@ func show_and_hide(first, second):
 	second.hide()
 	
 func _on_Exit_pressed():
+	print("Exit button was pressed")
 	get_tree().quit()
 
 func _on_Video_pressed():
